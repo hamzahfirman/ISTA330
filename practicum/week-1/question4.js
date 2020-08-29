@@ -13,19 +13,5 @@ The letters in A are guaranteed distinct, and all characters in A and B are lett
 
 var howManyCommon = function(A, B) {
     
-    var strALen = A.length;
-    var count = 0;
-    var i;
-
-    for(i = 0; i < B.length; i++){
-        if (strALen == 0){
-            return count;
-        };
-        if(B.chartAt(i) === A.chartAt(i)){
-            count ++;
-            strALen --;
-        }
-    }
-   return count;
-    
+ 
 };
