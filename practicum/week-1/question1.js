@@ -13,4 +13,3 @@ var runningSum = function(input) {
        input[i] =  sum;
    };
 };
-
