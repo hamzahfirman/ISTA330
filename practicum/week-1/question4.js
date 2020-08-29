@@ -19,12 +19,13 @@ var howManyCommon = function(A, B) {
 
     for(i = 0; i < B.length; i++){
         if (strALen == 0){
-            return strALen;
+            return count;
         };
-        if(B.chartAt(i) == A.chartAt(i)){
+        if(B.chartAt(i) === A.chartAt(i)){
             count ++;
             strALen --;
         }
     }
+ return count;
     
 };
