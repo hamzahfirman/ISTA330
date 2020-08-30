@@ -12,21 +12,19 @@ The letters in A are guaranteed distinct, and all characters in A and B are lett
 */
 
 var howManyCommon = function(A, B) {
-   
-    var strALen = A.length;
+    
     var count = 0;
     var i;
+    var j; 
 
-    for(i = 0; i < B.length + 1; i++){
-        if (strALen == 0){
-            return count;
-        };
-        if(B.substring(i, i+1) == A.substring(i, i+1)){
+    for(i = 0; i < A.length + 1; i++){
+    for(j = 0; j < B.length +1; j++){
+        if(A.substring(i, i+1) == B.substring(j,j+1)){
             count+=1;
-            strALen --;
         };
     };
-    return count;
 };
- 
+    
+ return count;
+};
 
