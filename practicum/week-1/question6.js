@@ -10,8 +10,11 @@ var median = function(input) {
     let numOfElements = input.length;
 
     if(numOfElements % 2 === 0){
-        let num1 = input[(numOfElements / 2) -1];
-        let num2 = input[num1 +1];
+        // Get the index of the first number 
+        let firstIndx = (numOfElements / 2) -1;
+
+        let num1 = input[firstIndx];
+        let num2 = input[firstIndx + 1];
         result = (num1 + num2) / 2;
     }else {
         
