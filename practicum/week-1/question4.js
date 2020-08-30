@@ -17,14 +17,14 @@ var howManyCommon = function(A, B) {
     var i;
     var j; 
 
-    for(i = 0; i < A.length + 1; i++){
-      for(j = 0; j < B.length +1; j++){
-        if(A.substring(i, i+1) == B.substring(j,j+1)){
+    for(i = 0; i < A.length; i++){
+    for(j = 0; j < B.length; j++){
+
+        if(A.charAt(i) === B.charAt(j)){
             count+=1;
         };
     };
 };
     
-return count;
+ return count;
 };
-
