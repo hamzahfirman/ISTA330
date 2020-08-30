@@ -18,13 +18,13 @@ var howManyCommon = function(A, B) {
     var j; 
 
     for(i = 0; i < A.length + 1; i++){
-    for(j = 0; j < B.length +1; j++){
+      for(j = 0; j < B.length +1; j++){
         if(A.substring(i, i+1) == B.substring(j,j+1)){
             count+=1;
         };
     };
 };
     
- return count;
+return count;
 };
 
