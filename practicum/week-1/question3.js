@@ -12,8 +12,9 @@ var numberOfOrderedPairs = function(input) {
     
     var count = 0;
     var i;
-    var j; 
-	  var secondStart = 1;
+    var j;
+    // Continous check, no checking the preceding 
+    var secondStart = 1;
 
     for(i = 0; i < input.length; i++){
     for(j = secondStart; j < input.length; j++){
