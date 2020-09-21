@@ -1,3 +1,4 @@
+
 /*
 An array is monotonic if it is 
 either monotone increasing 
@@ -39,3 +40,20 @@ var isMonotonic = function(input) {
 console.log(isMonotonic([12, 6, 2, 2, 2, 0]));
 
 
+var howManyCommon = function(A, B) {
+    
+    var count = 0;
+    var i;
+    var j; 
+
+    for(i = 0; i < A.length; i++){
+    for(j = 0; j < B.length; j++){
+
+        if(A.charAt(i) === B.charAt(j)){
+            count+=1;
+        };
+    };
+};
+    
+ return count;
+};
