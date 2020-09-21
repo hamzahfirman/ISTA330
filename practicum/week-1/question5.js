@@ -36,4 +36,7 @@ var minimalReduction = function(n) {
     return count;
 };
 
+<<<<<<< HEAD
 console.log(minimalReduction(12));
+=======
+>>>>>>> e631df10ceb4c500ee87882612fc4f5b1c2148f4
