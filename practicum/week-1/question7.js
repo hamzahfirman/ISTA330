@@ -11,5 +11,50 @@ output: 4
 */
 
 var maxSumOfMins = function(input) {
+       var maxSum= 0;
+       var i = 0;
+       // console.log(input);
+       var sort = sortFunc(input);
+       console.log(sort);
+       for(i = 0; i < sort.length; i += 2){
+              maxSum += sort[i];
+       };
 
+       return maxSum;
 };
+
+var sortFunc = function(arr){
+       var sorted = [];
+       var i = 0;
+       var min; 
+       var originLength =  arr.length;
+       while(i < originLength){
+              var minVal = findMin(arr);
+
+              sorted.push(minVal[0]);
+              if(minVal[1]== 0){
+                     arr.shift();
+              }else{
+               arr.splice(minVal[1], minVal[1]);
+              }
+
+              i++;
+       }
+    
+       return sorted;
+}
+var findMin = function(input){
+       var min = input[0];
+       var index = 0;
+       if (input.length == 1){
+              return [min, index];
+       }
+       for(var i = 1; i < input.length; i++){
+             if(input[i] < min){
+                    min = input[i];
+                    index= i;
+             } 
+       }
+       return [min, index];
+}
+console.log(maxSumOfMins([4, 3, 8, 0]));

@@ -10,6 +10,52 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
  */
 
  var canGetEqualCookies = function(cookies, extraCookies) {
-     
-    
+        var max = cookies[0];
+        for(let index = 1; index < cookies.length;index++){
+            if(max < cookies[index]){
+                max = cookies[index];
+            };
+        };
+
+        var currVal = cookies[0];
+        // Look for cookies are less than the Max
+        for(let index = 0; index < cookies.length;index++){
+            var diff; 
+            if(cookies[index] < max){
+                diff = max - cookies[index];
+                cookies[index] += diff;
+                extraCookies -= diff;
+                ;
+            };
+        };
+        
+        if(extraCookies == 0){
+            return true;
+        }
+        return false;
+
  };
+// FUNCTION CALL:
+//  console.log(canGetEqualCookies([2, 3, 1], 1));
+
+// Practicum #2 
+
+
+var largestSubarray = function(input) {
+    var max =0;
+    var i;
+    var j;
+    
+    for(i=0; i < input.length; i++){
+        var tempCount = 0;
+        for(j=i+1; j < input.length;j++){
+            tempCount += input[j];
+            if(max < tempCount){
+                max = tempCount;
+            }
+        }
+    }
+    return max; 
+};
+
+console.log(largestSubarray([-12,3,-1,7,-2,1,17]));
