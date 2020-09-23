@@ -19,17 +19,18 @@ var largestNumberIsAtleastTwice = function(input){
                     return false;
                 }
             }
-        }return true;
-    }
-    
-    var findMax = function(arr){
-        var max = arr[0];   
-        var i;
-    
-        for(i = 0; i< arr.length; i++){
-            if(max < arr[i]){
-                max = arr[i];
-            }
         }
-        return max;
+        return true;
+    };
+    
+var findMax = function(arr){
+    var max = arr[0];   
+    var i;
+    
+    for(i = 0; i< arr.length; i++){
+        if(max < arr[i]){
+            max = arr[i];
+        }
     }
+    return max;
+};
