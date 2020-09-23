@@ -17,18 +17,18 @@ output: true
 */
 
 var isMonotonic = function(input) {
-    var obj = {"Increasing": 0, "Decreasing": 0};
-    var i;
+    // var obj = {"Increasing": 0, "Decreasing": 0};
+    // var i;
 
-    for(i = 0; i < input.length -1; i++){
-        if(input[i] < input[i +1]){
-            obj["Decreasing"] += 1;
-        } else if(input[i] > input[i +1]){
-            obj["Increasing"] += 1;
-        }
-    }
-    if(obj["Decreasing"] == 0 || obj["Increasing"] == 0){
-        return true;
-    }
-    return false;
+    // for(i = 0; i < input.length -1; i++){
+    //     if(input[i] < input[i +1]){
+    //         obj["Decreasing"] += 1;
+    //     } else if(input[i] > input[i +1]){
+    //         obj["Increasing"] += 1;
+    //     }
+    // }
+    // if(obj["Decreasing"] == 0 || obj["Increasing"] == 0){
+    //     return true;
+    // }
+    // return false;
 };
