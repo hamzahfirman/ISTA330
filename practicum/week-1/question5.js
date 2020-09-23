@@ -10,11 +10,6 @@ input: 12
 output: 3
 12 divided by 4 becomes 3 which divided by 3 becomes 1. The third and last step is the substraction by one operation.
 */
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 81fbd3ddde4be682d3f9790c4fd299da2c876e15
 var minimalReduction = function(n) {
     let count = 0;
     let current = n;
@@ -35,8 +30,3 @@ var minimalReduction = function(n) {
     } }
     return count;
 };
-
-<<<<<<< HEAD
-console.log(minimalReduction(12));
-=======
->>>>>>> e631df10ceb4c500ee87882612fc4f5b1c2148f4

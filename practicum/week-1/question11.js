@@ -24,4 +24,3 @@ var decode = function(input) {
 
 };
 
-console.log(decode([2, 5, 4, 2]));

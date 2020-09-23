@@ -35,4 +35,3 @@ var maxBalanceNumber = function(input) {
     return pertCount;
     };
 
-console.log(maxBalanceNumber('abaabbabab'))

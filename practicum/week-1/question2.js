@@ -35,27 +35,3 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
         return false;
 
  };
-// FUNCTION CALL:
-//  console.log(canGetEqualCookies([2, 3, 1], 1));
-
-// Practicum #2 
-
-
-var largestSubarray = function(input) {
-    var max =0;
-    var i;
-    var j;
-    
-    for(i=0; i < input.length; i++){
-        var tempCount = 0;
-        for(j=i+1; j < input.length;j++){
-            tempCount += input[j];
-            if(max < tempCount){
-                max = tempCount;
-            }
-        }
-    }
-    return max; 
-};
-
-console.log(largestSubarray([-12,3,-1,7,-2,1,17]));

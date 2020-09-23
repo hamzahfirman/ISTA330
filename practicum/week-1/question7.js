@@ -57,4 +57,3 @@ var findMin = function(input){
        }
        return [min, index];
 }
-console.log(maxSumOfMins([4, 3, 8, 0]));
