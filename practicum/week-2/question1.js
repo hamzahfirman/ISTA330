@@ -9,7 +9,7 @@ is at least twice as much as every other number
          output: true
 */
 
-var largestNumberIsAtleastTwice = function(input){
+var largestNumberIsAtLeastTwice = function(input){
         var maxNum = findMax(input);
         var i;
     
