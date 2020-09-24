@@ -13,5 +13,29 @@ output: 3
 */
 
 var d_integer = function(input) {
+    var maxFreq = -1;
+    var i;
+    var flag = false;
+    var count = 0;
+    var dInt = 0;
 
+    for(i = 0; i < input.length - 1; i++){
+        if(input[i] == input[i + 1] && flag == false){
+            count += 1;
+            flag = true;
+        }
+        if(input[i] != input[i + 1]){
+            flag = false;
+            if(count >  maxFreq){
+                maxFreq = count;
+                dInt = input[i];
+                count = 0;
+            }
+        }else{
+            count +=1;
+        }
+    }
+    return dInt;
 };
+
+console.log(d_integer([3,5,3,9,6,45,86,9]));
