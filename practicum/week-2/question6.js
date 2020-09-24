@@ -12,19 +12,20 @@ output: 2
 */
 
 var m_element = function(input) {   
-    // var i;
-    // var j; 
-    // var arrSize = input.length;
-    // for(i = 0; i < arrSize; i++){
-    //     var count = 1;
-    //     for(j = i + 1; j < arrSize; j++){
-    //         if(input[i] == input[j]){
-    //             count += 1;
-    //         }
-    //     }
-    //     if(count > Math.floor(arrSize/2)){
-    //         return input[i];
-    //     }
-    // }
-    // return -1;
+    var i;
+    var j; 
+    var arrSize = input.length;
+    for(i = 0; i < arrSize; i++){
+        var count = 1;
+        for(j = i + 1; j < arrSize; j++){
+            if(input[i] == input[j]){
+                count += 1;
+            }
+        }
+        if(count > Math.floor(arrSize/2)){
+            return input[i];
+        }
+    }
+    return -1;
 };
+
