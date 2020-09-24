@@ -24,16 +24,21 @@ var largestGroupsCount = function(n) {
         }else{
             let firstDigit = Math.floor(i / 10);
             let secondDigit = i % 10;
-            let sumForIndex = (firstDigit + secondDigit) -1;
-            arr[sumForIndex].push(i);
+            let sumForIndex = (firstDigit + secondDigit) - 1;
+            if (arr[sumForIndex] == undefined) {
+                tempArr.push(i);
+                arr.push(tempArr);
+            }else{
+                arr[sumForIndex].push(i);
+            }
         }
     }
+
     var maxCount = findAndCountMax(arr);
     return maxCount;
 };
 
 var findAndCountMax = function(arr){
-
     var maxArrCount = 0;
     var count = 0;
     var i;
@@ -47,6 +52,6 @@ var findAndCountMax = function(arr){
         }
     }
     return count;
-}
-console.log(largestGroupsCount(25));
+};
+
 
