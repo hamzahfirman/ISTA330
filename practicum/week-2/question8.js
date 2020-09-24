@@ -13,7 +13,7 @@ output: 3
 */
 
 var d_integer = function(input) {
-    var maxFreq = -1;
+    var maxFreq = 0;
     var i;
     var flag = false;
     var count = 0;
@@ -23,6 +23,8 @@ var d_integer = function(input) {
         if(input[i] == input[i + 1] && flag == false){
             count += 1;
             flag = true;
+        }else if(input[i] == input[i + 1] && flag == true){
+            count +=1;
         }
         if(input[i] != input[i + 1]){
             flag = false;
@@ -31,11 +33,10 @@ var d_integer = function(input) {
                 dInt = input[i];
                 count = 0;
             }
-        }else{
-            count +=1;
         }
+    }
+    if(maxFreq == 0){
+        return -1;
     }
     return dInt;
 };
-
-console.log(d_integer([3,5,3,9,6,45,86,9]));
