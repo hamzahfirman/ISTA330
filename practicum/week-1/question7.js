@@ -14,9 +14,8 @@ var maxSumOfMins = function(input) {
        var maxSum= 0;
        var i = 0;
        // console.log(input);
-       var sort = sortFunc(input);
-       console.log(sort);
-       for(i = 0; i < sort.length; i += 2){
+       var sorted = sortFunc(input);
+       for(i = 0; i < sorted.length; i += 2){
               maxSum += sort[i];
        };
 
@@ -26,24 +25,20 @@ var maxSumOfMins = function(input) {
 var sortFunc = function(arr){
        var sorted = [];
        var i = 0;
-       var min; 
        var originLength =  arr.length;
        while(i < originLength){
+   
               var minVal = findMin(arr);
-
               sorted.push(minVal[0]);
-              if(minVal[1]== 0){
-                     arr.shift();
-              }else{
-               arr.splice(minVal[1], minVal[1]);
-              }
-
+              arr.splice(minVal[1], 1);
               i++;
+           
        }
     
        return sorted;
 }
 var findMin = function(input){
+   
        var min = input[0];
        var index = 0;
        if (input.length == 1){
@@ -55,5 +50,6 @@ var findMin = function(input){
                     index= i;
              } 
        }
+       
        return [min, index];
 }

@@ -16,5 +16,54 @@ output: [[-5, -4], [23, 24]]
 */
 
 var minPairs = function(input) {
+   var sortedArr = sortFunc(input);
+   var i;
+   var j;
+   var minDiff = 1;
+   var resultOfAllPairs = [];
 
-};
+   for(i = 0; i < sortedArr.length; i++){
+       for(j = i + 1; j < sortedArr.length; j++){
+
+           if(sortedArr[i] < sortedArr[j]){
+                var diff = sortedArr[j] - sortedArr[i];
+                if(minDiff > diff){
+                    minDiff = diff;
+                    resultOfAllPairs.push([[sortedArr[i], sortedArr[j]]]);
+                }else if(minDiff == diff){
+                    resultOfAllPairs.push([[sortedArr[i], sortedArr[j]]]);
+                }
+           }
+           }
+       }
+       return resultOfAllPairs;
+    }
+var sortFunc = function(arr){
+    var sorted = [];
+    var i = 0;
+    var originLength =  arr.length;
+    while(i < originLength){
+           var minVal = findMin(arr);
+           sorted.push(minVal[0]);
+           arr.splice(minVal[1], 1);
+           i++;
+        
+    }
+    return sorted;
+}
+var findMin = function(input){
+
+    var min = input[0];
+    var index = 0;
+    if (input.length == 1){
+           return [min, index];
+    }
+    for(var i = 1; i < input.length; i++){
+          if(input[i] < min){
+                 min = input[i];
+                 index= i;
+          } 
+    }
+    
+    return [min, index];
+}
