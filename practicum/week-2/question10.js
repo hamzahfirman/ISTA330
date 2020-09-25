@@ -19,16 +19,17 @@ var minPairs = function(input) {
    var sortedArr = sortFunc(input);
    var i;
    var j;
-   var minDiff = 1;
+   var minDiff = Math.abs(sortedArr[1] - sortedArr[0]);
    var resultOfAllPairs = [];
 
    for(i = 0; i < sortedArr.length; i++){
        for(j = i + 1; j < sortedArr.length; j++){
-
+           
            if(sortedArr[i] < sortedArr[j]){
-                var diff = sortedArr[j] - sortedArr[i];
+                var diff = Math.abs(sortedArr[j] - sortedArr[i]);
                 if(minDiff > diff){
                     minDiff = diff;
+                    resultOfAllPairs = [];
                     resultOfAllPairs.push([[sortedArr[i], sortedArr[j]]]);
                 }else if(minDiff == diff){
                     resultOfAllPairs.push([[sortedArr[i], sortedArr[j]]]);
