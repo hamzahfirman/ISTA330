@@ -55,10 +55,10 @@
 
        var col;
        var indx =0;
-          var element = document.getElementById('flowersDiv'); 
-        for(row = 0; row < flowers.length;row++){
-            element.innerHTML = '<img src="' + flowers[indx].picture + '" alt="' + flowers[indx].name + '"><br>' + flowers[indx].name;
-            indx += 1;
+       var element = document.getElementById('flowersDiv'); 
+       for(row = 0; row < flowers.length;row++){
+            document.write(element.innerHTML = '<img src="' + flowers[indx].picture + '" alt="' + flowers[indx].name + '"><br>' + flowers[row].name);
+        
            };
        
     </script>
