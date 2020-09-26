@@ -26,7 +26,7 @@ var howManyTeams = function(input) {
 
    // Odd Length
    if(input.length % 2 == 0){
-           var loopLength = input.length / 2;
+           var loopLength = (input.length / 2) + 1;
 
    }else{ // Even Length
         var loopLength = Math.ceil(input.length / 2);
@@ -39,7 +39,7 @@ var howManyTeams = function(input) {
                 currArray.push(input[i]);
                 currArray.push(input[j]);
                 currArray.push(input[j+1]);
-
+        
                 // VALIDATION PROCESS
                 if(isSortedOrNot(currArray, input.length) == true){
                   count +=1;
@@ -56,4 +56,3 @@ var isSortedOrNot = function(arr, arrLength) {
         }
         return false;
 }
-
