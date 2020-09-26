@@ -55,11 +55,19 @@
 
        var col;
        var indx =0;
+       var row;
        var element = document.getElementById('flowersDiv'); 
-       for(row = 0; row < flowers.length;row++){
-            document.write(element.innerHTML = '<img src="images/' + flowers[row].picture + '"><br>' + flowers[row].name);
-        
+       document.write(element.innerHTML = "<table>");
+    
+       for(row = 0; row < 2;row++){
+            document.write(element.innerHTML = "<tr>");
+            for(col = 0; col < 4;col++){
+                document.write(element.innerHTML = '<td><img src="images/' + flowers[indx].picture + '"><br>' + flowers[indx].name + "</td>");
+                indx++;
            };
+        
+           document.write(element.innerHTML = "</tr>");
+        };
        
     </script>
 </body>
