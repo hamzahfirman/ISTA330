@@ -14,5 +14,14 @@ output: 1
 */
 
 var d_count = function(input1, input2, d) {
+    var i;
+    var j;
 
+    for(i = 0; i <input1.length; i++){
+        for(j = 0; j < input2.length; j++){
+            console.log(Math.abs(input1[i] - input2[j]));
+        }
+    }
 };
+
+console.log(d_count([2,1,26,3], [-5,-2,10,-3,7], 6));
