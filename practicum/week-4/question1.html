@@ -56,11 +56,11 @@
        var col;
        var indx =0;
 
-        for(col = 0; col < 4; col++){
+        for(row = 0; row < flowers.length;row++){
             var element = document.getElementById('flowersDiv');
             element.innerHTML = '<img src="' + flowers[indx].picture + '" alt="' + flowers[indx].name + '"><br>' + flowers[indx].name;
             indx += 1;
-           }
+           };
        
     </script>
 </body>
