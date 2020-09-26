@@ -60,7 +60,7 @@
        for(row = 0; row < 2; row++){
            for(col = 0; col < 4; col++){
                var element = document.getElementById('flowersDiv');
-               element.innerHTML = '<img src="' + flowers[indx].picture + '" alt="' + flowers[indx] + '">'
+               element.innerHTML = '<img src="' + flowers[indx].picture + '" alt="' + flowers[indx].name + '"><br>' + flowers[indx].name;
            }
        }
     </script>
