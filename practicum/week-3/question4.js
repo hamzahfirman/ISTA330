@@ -25,7 +25,7 @@ var powerSet = function(input) {
   tempObj[[]] = [];
   const tempArr = [];
 
-  const result = new Set();
+  const result = [];
 
   // Move all elements from Set into an array
   moveSetToArray(input, tempArr)
@@ -50,7 +50,7 @@ var powerSet = function(input) {
   // All elements in the set
   tempObj[tempArr] = tempArr;
   // console.log(tempObj);
-  moveObjToSet(tempObj, result)
+  moveObjToArray(tempObj, result)
   return result;
 }
 
@@ -60,8 +60,8 @@ var moveSetToArray = (set, arr) => {
   };
 };
 
-var moveObjToSet = (obj, set) => {
+var moveObjToArray = (obj, arr) => {
   for(const element in obj){
-    set.add(obj[element]);
+    arr.push(obj[element]);
   };
 };
