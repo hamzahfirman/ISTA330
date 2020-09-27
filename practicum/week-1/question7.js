@@ -16,7 +16,7 @@ var maxSumOfMins = function(input) {
        // console.log(input);
        var sorted = sortFunc(input);
        for(i = 0; i < sorted.length; i += 2){
-              maxSum += sort[i];
+              maxSum += sorted[i];
        };
 
        return maxSum;
