@@ -17,29 +17,6 @@ input: [12, 6, 2, 2, 2, 0]
 output: true
 */
 
-var isMonotonic = function(input) {
-
-    var i;
-    var count;
-
-    for(i = 0; i< input.length -1; i ++){
-        if(input[i] > input[i +1]){
-            count += 1;
-        }
-        if(input[i] < input[i +1]){
-            count -= 1;
-        }
-        
-    }
-    if(count == input.length || count == (input.length) * -1){
-        return true;
-    }
-    return false;
-};
-
-console.log(isMonotonic([12, 6, 2, 2, 2, 0]));
-
-
 var howManyCommon = function(A, B) {
     
     var count = 0;

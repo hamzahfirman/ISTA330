@@ -11,16 +11,16 @@ output: [5, 5, 2, 2, 2, 2]
 
 var decode = function(input) {
     
-    var resultt = [];
+    var result = [];
     var i;
     var j;
     for(i = 0; i < input.length; i+=2){
         for(j = 1; j < input[i] + 1; j++){
-            resultt.push(input[i +1]);
+            result.push(input[i +1]);
         }
     }
 
-    return resultt;
+    return result;
 
 };
 

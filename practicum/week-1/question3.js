@@ -29,25 +29,3 @@ var numberOfOrderedPairs = function(input) {
     
  return count;
 };
-
-
-var PascalTriangle = function(n) {
-    var arr = [];
-
-    var i;
-    var j;
-    var currArr = [];
-    for(i =0; i < n; i++){
-        var temp = [];
-        for(j=0; j < i+1 ; j++){
-            if(j == 0 || j == i){
-                temp[j] = 1;
-            }else {
-                
-            }
-        }currArr = temp; arr.push(temp);
-    }
-    return arr;
-};
-
-console.log(PascalTriangle(7));
