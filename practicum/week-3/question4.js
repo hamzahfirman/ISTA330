@@ -19,33 +19,59 @@ Example:
 */
 
 var powerSet = function(input) {
-  const tempSet = new Set();
-  tempSet.add([]);
+
+
+  const tempObj = {};
+  tempObj[[]] = "Present";
+  
 
   const tempArr = [];
   const result = [];
 
   // Move all elements from Set into an array
   moveSetToArray(input, tempArr)
+
+      for(var i = 0; i < tempArr.length; i++){
+        if(tempObj[tempArr[i]] != "Present"){
+          tempObj[tempArr[i]] = "Present";
+        }
+        for(var j = i +1; j < tempArr.length; j++){
+
+          if(tempObj[[tempArr[i], tempArr[j]]] != "Present"){
+            tempObj[[tempArr[i], tempArr[j]]] = "Present";
+          }
+          // 
+          if(tempObj[tempArr.slice(i,j)]!= "Present"){
+            tempObj[tempArr.slice(i,j)] = "Present"
+          }
+          
   
 
-  for(var i = 0; i < tempArr.length; i++){
-    tempSet.add([tempArr[i]]);
-    for(var j = i +1; j < tempArr.length; j++){
-      tempSet.add([tempArr[i], tempArr[j]]);
-    }
   }
-
+    }
   // All elements in the set
-  tempSet.add(tempArr);
-  // Moves all subsets into an Array
-  moveSetToArray(tempSet, result)
-
+  tempObj[tempArr] = "Present";
+  // console.log(tempObj);
+  moveObjToArray(tempObj, result)
   return result;
-};
+}
 
 var moveSetToArray = (set, arr) => {
   for(var element of set){
     arr.push(element);
   };
 };
+
+var moveObjToArray = (set, arr) => {
+  for(const element in set){
+    arr.push([element]);
+  };
+};
+
+
+// const set1 = new Set();
+// set1.add(1);
+// set1.add(2);
+// set1.add(3);
+// // // set1.add(4);
+// // console.log(powerSet(set1));
