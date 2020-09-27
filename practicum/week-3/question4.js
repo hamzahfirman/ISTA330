@@ -23,29 +23,27 @@ var powerSet = function(input) {
 
   const tempObj = {};
   tempObj[[]] = [];
-  
-
   const tempArr = [];
+
   const result = new Set();
 
   // Move all elements from Set into an array
   moveSetToArray(input, tempArr)
 
-    // console.log(tempArr)
-      for(var i = 0; i < tempArr.length; i++){
-        if(tempObj[tempArr[i]] == undefined){
-          tempObj[tempArr[i]] = [tempArr[i]];
+  // console.log(tempArr)
+  for(var i = 0; i < tempArr.length; i++){
+    if(tempObj[tempArr[i]] == undefined){
+      tempObj[tempArr[i]] = [tempArr[i]];
+      }
+    for(var j = i +1; j < tempArr.length; j++){
+      // Two elements subsets
+      if(tempObj[[tempArr[i], tempArr[j]]] == undefined){
+        tempObj[[tempArr[i], tempArr[j]]] = [tempArr[i], tempArr[j]];
+      }
+      // More than two elements subsets
+      if(tempObj[tempArr.slice(i,j + 1)] == undefined ){
+        tempObj[tempArr.slice(i,j + 1)] = tempArr.slice(i,j + 1);
         }
-        for(var j = i +1; j < tempArr.length; j++){
-          // Two elements subsets
-          if(tempObj[[tempArr[i], tempArr[j]]] == undefined){
-            tempObj[[tempArr[i], tempArr[j]]] = [tempArr[i], tempArr[j]];
-          }
-          // More than two elements subsets
-          if(tempObj[tempArr.slice(i,j + 1)] == undefined ){
-            tempObj[tempArr.slice(i,j + 1)] = tempArr.slice(i,j + 1)
-  
-          }
   
   }
     }
@@ -67,11 +65,3 @@ var moveObjToSet = (obj, set) => {
     set.add(obj[element]);
   };
 };
-
-
-// const set1 = new Set();
-// set1.add(1);
-// set1.add(2);
-// set1.add(3);
-// set1.add(4);
-// console.log(powerSet(set1));
