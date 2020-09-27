@@ -26,7 +26,7 @@ var powerSet = function(input) {
   
 
   const tempArr = [];
-  const result = [];
+  const result = new Set();
 
   // Move all elements from Set into an array
   moveSetToArray(input, tempArr)
@@ -37,11 +37,11 @@ var powerSet = function(input) {
           tempObj[tempArr[i]] = [tempArr[i]];
         }
         for(var j = i +1; j < tempArr.length; j++){
-
+          // Two elements subsets
           if(tempObj[[tempArr[i], tempArr[j]]] == undefined){
             tempObj[[tempArr[i], tempArr[j]]] = [tempArr[i], tempArr[j]];
           }
-
+          // More than two elements subsets
           if(tempObj[tempArr.slice(i,j + 1)] == undefined ){
             tempObj[tempArr.slice(i,j + 1)] = tempArr.slice(i,j + 1)
   
@@ -52,7 +52,7 @@ var powerSet = function(input) {
   // All elements in the set
   tempObj[tempArr] = tempArr;
   // console.log(tempObj);
-  moveObjToArray(tempObj, result)
+  moveObjToSet(tempObj, result)
   return result;
 }
 
@@ -62,9 +62,9 @@ var moveSetToArray = (set, arr) => {
   };
 };
 
-var moveObjToArray = (obj, arr) => {
+var moveObjToSet = (obj, set) => {
   for(const element in obj){
-    arr.push(obj[element]);
+    set.add(obj[element]);
   };
 };
 
