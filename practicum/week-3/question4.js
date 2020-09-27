@@ -22,7 +22,7 @@ var powerSet = function(input) {
 
 
   const tempObj = {};
-  tempObj[[]] = "Present";
+  tempObj[[]] = [];
   
 
   const tempArr = [];
@@ -31,26 +31,26 @@ var powerSet = function(input) {
   // Move all elements from Set into an array
   moveSetToArray(input, tempArr)
 
+    // console.log(tempArr)
       for(var i = 0; i < tempArr.length; i++){
-        if(tempObj[tempArr[i]] != "Present"){
-          tempObj[tempArr[i]] = "Present";
+        if(tempObj[tempArr[i]] == undefined){
+          tempObj[tempArr[i]] = [tempArr[i]];
         }
         for(var j = i +1; j < tempArr.length; j++){
 
-          if(tempObj[[tempArr[i], tempArr[j]]] != "Present"){
-            tempObj[[tempArr[i], tempArr[j]]] = "Present";
+          if(tempObj[[tempArr[i], tempArr[j]]] == undefined){
+            tempObj[[tempArr[i], tempArr[j]]] = [tempArr[i], tempArr[j]];
           }
-          // 
-          if(tempObj[tempArr.slice(i,j)]!= "Present"){
-            tempObj[tempArr.slice(i,j)] = "Present"
-          }
-          
-  
 
+          if(tempObj[tempArr.slice(i,j + 1)] == undefined ){
+            tempObj[tempArr.slice(i,j + 1)] = tempArr.slice(i,j + 1)
+  
+          }
+  
   }
     }
   // All elements in the set
-  tempObj[tempArr] = "Present";
+  tempObj[tempArr] = tempArr;
   // console.log(tempObj);
   moveObjToArray(tempObj, result)
   return result;
@@ -62,9 +62,9 @@ var moveSetToArray = (set, arr) => {
   };
 };
 
-var moveObjToArray = (set, arr) => {
-  for(const element in set){
-    arr.push([element]);
+var moveObjToArray = (obj, arr) => {
+  for(const element in obj){
+    arr.push(obj[element]);
   };
 };
 
@@ -73,5 +73,5 @@ var moveObjToArray = (set, arr) => {
 // set1.add(1);
 // set1.add(2);
 // set1.add(3);
-// // // set1.add(4);
-// // console.log(powerSet(set1));
+// set1.add(4);
+// console.log(powerSet(set1));
