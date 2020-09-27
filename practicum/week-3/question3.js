@@ -13,12 +13,14 @@ var kStepAway = function(input, k) {
     var i;
     var flag = false;
     for(i = 0; i < input.length; i++){
+        // When 0 found in the list
         if(input[i] == 0 && flag == false){
             count+=1;
             flag = true;
-        }else if (flag == true){
+        }else if (input[i] == 0 && flag == true){
             count++;
         }
+        
         if (input[i] == 1 && flag == true && count < k) {
             return false;
         }else if(input[i] == 1 && flag == true){
